@@ -1,9 +1,8 @@
 {
-  "name": "cfa-fellowships-dashboard",
+  "name": "fellows_app",
   "version": "1.0.0",
   "description": "Node.js on Docker",
   "author": "Damian Dzieduch <d.dzieduch@gmail.com>",
-  "main": "app.js",
   "scripts": {
     "start": "node start.js"
   },
@@ -15,8 +14,5 @@
     "mongodb": "~3.0.1",
     "mongoose": "^5.3.15",
     "pug": "^2.0.3"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.7"
   }
 }
