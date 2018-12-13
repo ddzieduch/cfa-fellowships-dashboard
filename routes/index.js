@@ -72,17 +72,15 @@ router.get('/', (req, res) => {
 		}]
 	);
 
-	const youngestFellow = Fellow.find().sort({age:-1}).limit(1);
+	const youngestFellow = Fellow.find().sort({age:+1}).limit(1);
 
-	const oldestFellow = Fellow.find().sort({age:+1}).limit(1);
+	const oldestFellow = Fellow.find().sort({age:-1}).limit(1);
 
 	Promise.all([fellowshipsAvgAge, youngestFellow, oldestFellow])
 	.then((results) => {
 		const fellowshipsAvgAge = results[0];
 		const youngestFellow = results[1];
 		const oldestFellow = results[2];
-
-		console.log(youngestFellow);
 
 		res.render('index', { title: 'Listing fellows', fellowshipsAvgAge, youngestFellow, oldestFellow });
 	})

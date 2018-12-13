@@ -17,9 +17,23 @@ block content
     if youngestFellow.length
 
       div.col-md-6
-        p
+        h3 Youngest fellow
 
-    if oldestFellow
+        each fellow in youngestFellow
+          h2| #{fellow.name.first} #{fellow.name.last}
+          p| Age: #{fellow.age}
+          p| e-mail: #{fellow.email}
+          p| fellowship: #{fellow.fellowship}
+          p| about: #{fellow.about}
+
+    if oldestFellow.length
 
       div.col-md-6
-        p
+        h3 Oldest fellow
+
+        each fellow in oldestFellow
+          h2| #{fellow.name.first} #{fellow.name.last}
+          p| Age: #{fellow.age}
+          p| e-mail: #{fellow.email}
+          p| fellowship: #{fellow.fellowship}
+          p| about: #{fellow.about}
