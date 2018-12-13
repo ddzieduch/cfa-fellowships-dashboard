@@ -1,0 +1,36 @@
+extends layout
+
+block content
+
+  -data = data || {}
+  if errors
+    ul
+      for error in errors
+        li= error.msg
+
+  form(
+    action="/import"
+    method="POST"
+    enctype="multipart/form-data"
+  )
+
+    div.input-group
+      div.custom-file
+        input(
+          type="file"
+          id="importFile"
+          name="importFile"
+          class="custom-file-input"
+          value=data.importFile
+        )
+        label(
+          for="importFile"
+          class="custom-file-label"
+        ) Choose file
+
+
+    input(
+      type="submit"
+      class="btn btn-block mt-3"
+      value="Submit"
+    )

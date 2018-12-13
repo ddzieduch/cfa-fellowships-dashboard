@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  if fellowshipsAvgAge.length
+    table.table.table-striped
+      tr
+        th Fellowship
+        th Average Age
+      each fellowship in fellowshipsAvgAge
+        tr
+          td= fellowship._id.fellowship
+          td= fellowship.avgAge
+  else
+    p No fellowships yet :(
+
+  div.row
+    if youngestFellow.length
+
+      div.col-md-6
+        p
+
+    if oldestFellow
+
+      div.col-md-6
+        p
