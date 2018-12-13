@@ -2,14 +2,19 @@ extends layout
 
 block content
   if fellowshipsAvgAge.length
-    table.table.table-striped
+    table.table.table-bordered
       tr
         th Fellowship
         th Average Age
       each fellowship in fellowshipsAvgAge
-        tr
+        tr.table-dark
           td= fellowship._id.fellowship
           td= fellowship.avgAge
+        each fellow in fellowship.fellow
+          tr
+           td| #{fellow.name.first} #{fellow.name.last}
+           td= fellow.age
+
   else
     p No fellowships yet :(
 

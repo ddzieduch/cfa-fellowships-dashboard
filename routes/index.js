@@ -58,6 +58,7 @@ router.get('/', (req, res) => {
 				_id: { fellowship: "$fellowship" },
 				totalAge: { $sum: "$age" },
 				count: { $sum: 1 },
+				fellow: { $push: "$$ROOT" }
 			}
 		},
 		{
@@ -67,6 +68,7 @@ router.get('/', (req, res) => {
 				fellowship:1,
 				totalAge:1,
 				count:1,
+				fellow:1,
 				avgAge: { $divide: [ "$totalAge", "$count" ] }
 			}
 		}]
